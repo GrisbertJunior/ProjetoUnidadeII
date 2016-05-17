@@ -1,12 +1,13 @@
 //Projeto I LED Piscando - Automação Residencial
 
-int ledPin=10; 
+int ledPin=10; // LED conectado na porta 10 do Arduino;
 void setup() {
-	pinMode(ledPin, OUTPUT);
+	pinMode(ledPin, OUTPUT); // Configura a porta como saida (OUTPUT); 
 }
 void loop() {
-	digitalWrite(ledPin, HIGH);
-	delay(1000);
-	digitalWrite(LedPin, LOW);
-	delay(1000);
+	digitalWrite(ledPin, HIGH); // Liga (HIGH) o LED; 
+	delay(1000); // Espera um segundo; 
+	
+	digitalWrite(LedPin, LOW);  // Desliga (LOW) o LED; 
+	delay(1000); // Espera um segundo; 
 }
