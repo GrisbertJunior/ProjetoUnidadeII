@@ -55,6 +55,18 @@ digitalWrite(ledPin, LOW); // Apaga o LED;
 delay(100); // Espera 100ms;
 }
 
-
 delay(5000); // Espera 5 segundos antes de repetir o código de SOS;
 }
+
+//Projeto III Sinal Ingles - Automação Residencial
+
+int ledDelay = 10000; // Espera um minuto entre o LED Red e o LED Green;
+int redPin = 10; // LED Red conectado na porta 10 do Arduino;
+int yellowPin = 9; // LED Yellow conectado na porta 9 do Arduino;
+int greenPin = 8; // LED Green na porta 8 do Arduino;
+
+void setup() {
+	pinMode(redPin, OUTPUT); // Configura pino do LED Red como saída;
+	pinMode(yellowPin, OUTPUT); // Configura pino do LED Yellow como saída;
+	pinMode(greenPin, OUTPUT);	// Configura pino do LED Green como saída;	
+}	
