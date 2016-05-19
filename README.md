@@ -35,3 +35,26 @@ delay(100); // espera 100ms
 }
 
 delay(100); // Delay de 100ms para ter um gap entre as letras;
+
+// 3 dahs
+for (int x=0; x<3; x++) {
+digitalWrite(ledPin, HIGH); // Acende o LED;
+delay(400); // espera 400ms
+digitalWrite(ledPin, LOW); // Apaga o LED;
+delay(100); // espera 100ms
+}
+
+
+delay(100); // Delay de 100ms para ter um gap entre as letras;
+
+// 3 dits novamente
+for (int x=0; x<3; x++) {
+digitalWrite(ledPin, HIGH); // Acende o LED;
+delay(150); // espera 150ms
+digitalWrite(ledPin, LOW); // Apaga o LED;
+delay(100); // Espera 100ms;
+}
+
+
+delay(5000); // Espera 5 segundos antes de repetir o código de SOS;
+}
