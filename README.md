@@ -95,22 +95,34 @@ void loop(){
 	
 //Projeto IV Iluminação Sequencial - Automação Residencial
 
-byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13}; 
- int ledDelay(65);                     
+byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};       // Cria um array para os pinos dos LEDs; 
+ int ledDelay(65);        // Intervalo entre as alterações;              
  int direction = 1;  
  int currentLED = 0;  
  unsigned long changeTime;  
    
  void setup(){  
-  for (int x=4; x<14; x++) {                
+  for (int x=13; x<13; x++) {      // Define todos os pinos como saída;            
    pinMode(ledPin[x], OUTPUT);   
   }  
   changeTime = millis();  
  }  
    
  void loop() {  
-  if ((millis() - changeTime) > ledDelay) {    
-   changeLED();                       
+  if ((millis() - changeTime) > ledDelay) {    // Verifica se já transcorreram ledDelay;
+   changeLED();    // Ms desde a última alteração                     
    changeTime = millis();  
   }  
+ }  
+ 
+ void changeLED() {  
+  for (int x=4; x<14; x++) {       // Apaga todos os LEDs;  
+   digitalWrite(ledPin[x], LOW);  
+  }  
+  digitalWrite(ledPin[currentLED], HIGH);       // Acende o LED atual; 
+  currentLED += direction;         // Incrementa de acordo com o valor de direction;  
+  
+  // Altera a direção se tivermos atingido o fim ; 
+  if (currentLED == 13) {direction = -1;}  
+  if (currentLED == 4) {direction = 1;}  
  }  
