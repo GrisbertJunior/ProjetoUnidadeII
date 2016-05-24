@@ -93,3 +93,24 @@ void loop(){
 	
 	}
 	
+//Projeto IV Iluminação Sequencial - Automação Residencial
+
+byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13}; 
+ int ledDelay(65);                     
+ int direction = 1;  
+ int currentLED = 0;  
+ unsigned long changeTime;  
+   
+ void setup(){  
+  for (int x=4; x<14; x++) {                
+   pinMode(ledPin[x], OUTPUT);   
+  }  
+  changeTime = millis();  
+ }  
+   
+ void loop() {  
+  if ((millis() - changeTime) > ledDelay) {    
+   changeLED();                       
+   changeTime = millis();  
+  }  
+ }  
