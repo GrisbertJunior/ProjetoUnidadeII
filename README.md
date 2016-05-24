@@ -136,3 +136,14 @@ byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};       // Cria um array para 
   pinMode(ledPin, OUTPUT); // Inicializa o pino de saída do arduino;  
   pinMode(button, INPUT); // Inicializa o pino entrara para receber sinal;  
  }  
+ 
+ void loop(){  
+  int state = digitalRead(button); // Recebe sinal do botão;  
+    
+  if(state == HIGH){ // Se o botão estiver precionado liga o LED;  
+   digitalWrite(ledPin, HIGH);  
+  }  
+  else{       // Senão o LED apaga;  
+   digitalWrite(ledPin, LOW);  
+  }  
+ }  
