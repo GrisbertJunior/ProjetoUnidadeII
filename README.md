@@ -126,3 +126,13 @@ byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};       // Cria um array para 
   if (currentLED == 13) {direction = -1;}  
   if (currentLED == 4) {direction = 1;}  
  }  
+ 
+ //Projeto V Pressionando botao para ligar o LED - Automação Residencial;
+   
+ int ledPin = 8;  
+ int button = 3; // Botão;  
+   
+ void setup(){  
+  pinMode(ledPin, OUTPUT); // Inicializa o pino de saída do arduino;  
+  pinMode(button, INPUT); // Inicializa o pino entrara para receber sinal;  
+ }  
