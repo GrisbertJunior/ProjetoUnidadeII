@@ -147,3 +147,25 @@ byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};       // Cria um array para 
    digitalWrite(ledPin, LOW);  
   }  
  }  
+ 
+ 
+ //Projeto VI Usando LCD - Automação Residencial;
+ 
+ 
+  #include <LiquidCrystal.h> //Inclui a biblioteca do LCD; 
+    
+ LiquidCrystal lcd(12, 11, 5, 4, 3, 2); //Configura os pinos do Arduino para se comunicar com o LCD;  
+    
+ int temp=0; // Utilizado para escrever no LCD, vai 0 - 9 e depois zera;  
+ int cont=0; // Depois que o temp passa do 9 o cont incrementa;  
+   
+ void setup(){  
+  lcd.begin(16, 2);        //Inicia o LCD com dimensões 16x2(Colunas x Linhas);  
+  lcd.setCursor(0, 0); //Posiciona o cursor na primeira coluna(0) e na primeira linha(0) do LCD;  
+  lcd.print("Bem vindo!");  
+  lcd.setCursor(0, 1); //Posiciona o cursor na primeira coluna(0) e na segunda linha(1) do LCD;  
+  lcd.print("Grupo ARmix");  
+   
+  lcd.setCursor(14, 0);  
+  lcd.print(cont);  
+ }
