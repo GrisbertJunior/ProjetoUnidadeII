@@ -169,3 +169,17 @@ byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};       // Cria um array para 
   lcd.setCursor(14, 0);  
   lcd.print(cont);  
  }
+ 
+ void loop(){  
+  lcd.setCursor(13, 1);            //Posiciona o cursor na décima quarta coluna(13) e na segunda linha(1) do LCD; 
+  lcd.print(temp);                 //Escreve o valor atual da variável de contagem no LCD;  
+  delay(1000);  
+  temp++;                         //Incrementa variável de contagem;  
+    
+  if(temp == 10){  
+   cont++;   
+   lcd.setCursor(14, 0);         //Posiciona o cursor na décima quinta coluna(14) e na segunda linha(0) do LCD;  
+   lcd.print(cont);              //Escreve o valor atual da variável cont no LCD, a cada 10 incrementos no tempo;  
+   temp = 0;                     //Zera a variável de contagem;  
+  }  
+ }  
