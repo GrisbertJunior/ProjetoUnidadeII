@@ -194,3 +194,25 @@ byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};       // Cria um array para 
   pinMode(ledPin, OUTPUT);  
   Serial.println("Deseja Ligar o LED(s/n)");  
  }  
+ 
+ void loop(){  
+    
+  if(Serial.available()){   // Verifica se tem algo digitado, senão não entra no if; 
+   buffer = Serial.read();   
+   if(buffer == 's'){  
+    digitalWrite(ledPin, HIGH); // Liga o LED  
+    delay(1000);  
+    Serial.println ("Deseja manter o LED ligado(s/n)");  
+   }  
+   else{  
+    if(buffer == 'n'){  
+     digitalWrite(ledPin, LOW);  // Desliga o LED;  
+     delay(1000);  
+     Serial.println ("Deseja Ligar o LED(s/n)");  
+    }  
+   }  
+  }  
+ }  
+ 
+ 
+ 
