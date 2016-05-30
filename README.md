@@ -183,3 +183,14 @@ byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};       // Cria um array para 
    temp = 0;                     //Zera a variável de contagem;  
   }  
  }  
+ 
+ //Projeto VII Ligando LED pelo terminal - Automação Residencial;
+ 
+ int ledPin = 8;  
+ char buffer;              //Para salvar o que é digitado;   
+   
+ void setup(){  
+  Serial.begin(9600);      //Comunicação via USB  
+  pinMode(ledPin, OUTPUT);  
+  Serial.println("Deseja Ligar o LED(s/n)");  
+ }  
