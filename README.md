@@ -215,4 +215,19 @@ byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};       // Cria um array para 
  }  
  
  
+ //Projeto VIII - Servo motor lendo valores do terminal - Automação Residencial;
  
+ #include <Servo.h>  
+   
+ Servo servo1; // Cria uma variavel do tipo Servo que será;  
+ char buffer[4]; // Array de char que irá converter para int;  
+   
+ int received; //Usada para identificar o tamanho str;  
+   
+ void setup(){  
+  Serial.begin(9600);  
+  servo1.attach(8); // Atribui o servo ao pino 8 do Arduino;  
+   
+  received = 0;  
+  buffer[received] = '\0'; //A posição 0 do array recebe '\0';  
+ }  
