@@ -231,3 +231,16 @@ byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};       // Cria um array para 
   received = 0;  
   buffer[received] = '\0'; //A posição 0 do array recebe '\0';  
  }  
+ 
+ void loop(){  
+   
+  if(Serial.available()){        // Verifica se algo foi digitado;  
+   buffer[received++] = Serial.read();   //Salva os dados digitados;  
+   if(received >= (sizeof(buffer)-1)){  
+    int numero = atoi(buffer);      // Converte o valor de "char" para "int";  
+    servo1.write(numero);     // Envia o comando para o Servo Motor;  
+    received = 0;  
+   }  
+   Serial.flush();    // Limpa o buffer da entrada serial; 
+  }  
+ }  
