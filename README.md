@@ -244,3 +244,23 @@ byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};       // Cria um array para 
    Serial.flush();    // Limpa o buffer da entrada serial; 
   }  
  }  
+ 
+ Projeto IX - LED RGB - Automação Residencial;
+ 
+ int greenPin = 3;  
+ int redPin = 6;  
+ int bluePin = 5;  
+   
+ void setup(){  
+  pinMode(redPin, OUTPUT);  
+  pinMode(bluePin, OUTPUT);  
+  pinMode(greenPin, OUTPUT);  
+ }  
+   
+ void loop(){  
+  //---------------------------------   
+  for(int i=0; i<=255; i++){  
+   analogWrite(bluePin, i);  
+   analogWrite(redPin, 255-i);  
+  delay(30);   
+  }   
