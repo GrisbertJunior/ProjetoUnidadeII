@@ -303,4 +303,19 @@ byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13};       // Cria um array para 
   delay(30);   
   }  
   
+   for(float i=0; i<=255; i++){  
+   analogWrite(greenPin, i);  
+   analogWrite(redPin, 255-i);  
+   analogWrite(bluePin, 255-(i/3));  
+  delay(30);   
+  }     
    
+ for(int i=0; i<=255; i++){  
+   analogWrite(greenPin, 255-i);  
+   analogWrite(redPin, i);  
+   analogWrite(bluePin, 255-i);  
+  delay(30);   
+  }   
+ 
+  delay(1000);           
+ }  
